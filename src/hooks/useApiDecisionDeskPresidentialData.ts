@@ -21,3 +21,17 @@ export function useApiDecisionDeskPresidentialData(
     },
   )
 }
+
+export function useDecisionDeskPresidentRace(
+  fallbackData: GetRacesResponse,
+  params?: GetRacesParams,
+) {
+  return useSWR(
+    apiUrls.decisionDeskRaces(params),
+    url =>
+      fetchReq(url)
+        .then(res => res.json())
+        .then(data => data as GetRacesResponse),
+    { fallbackData, refreshInterval: 60 * 1000 * 2 },
+  )
+}
