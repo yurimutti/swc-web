@@ -2,7 +2,7 @@ import 'server-only'
 
 import { NextResponse } from 'next/server'
 
-import { PresidentialDataWithVotingResponse } from '@/data/aggregations/decisionDesk/getDtsiPresidentialWithVotingData'
+import { PresidentialDataWithVotingResponse } from '@/data/aggregations/decisionDesk/types'
 import { getDecisionDataFromRedis } from '@/utils/server/decisionDesk/cachedData'
 import { SECONDS_DURATION } from '@/utils/shared/seconds'
 
